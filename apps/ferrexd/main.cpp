@@ -1,12 +1,11 @@
 // ferrexd: the exchange daemon. In Phase 0 it only prints build info;
 // gateway, matching shards and market data are wired in later phases.
 
-#include <cstdio>
+#include <print>
 
 #include "ferrex/version.hpp"
 
 int main() {
-    const auto info = ferrex::build_info();
-    std::printf("%.*s\n", static_cast<int>(info.size()), info.data());
+    std::println("{}", ferrex::build_info());
     return 0;
 }
